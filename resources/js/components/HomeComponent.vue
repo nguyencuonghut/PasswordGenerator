@@ -20,11 +20,16 @@
 
         methods:{
             generatePassword(){
-                let CharacterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
+                let CharacterSet_1 = 'ABCDEFGHIJKLMNOPQRSTUVWX';
+                let CharacterSet_2 = 'abcdefghijklmnopqrstuvwxyz';
+                let CharacterSet_3 = '0123456789';
+                let CharacterSet_4 = '!@#$%&*';
                 let password = '';
-                let size = 8;
-                for(let i = 0; i < size; i++ ){
-                    password += CharacterSet.charAt(Math.floor(Math.random() * CharacterSet.length));
+                for(let i = 0; i < 2; i++ ){
+                    password += CharacterSet_1.charAt(Math.floor(Math.random() * CharacterSet_1.length));
+                    password += CharacterSet_2.charAt(Math.floor(Math.random() * CharacterSet_2.length));
+                    password += CharacterSet_3.charAt(Math.floor(Math.random() * CharacterSet_3.length));
+                    password += CharacterSet_4.charAt(Math.floor(Math.random() * CharacterSet_4.length));
                 }
                 this.password = password;
             },
